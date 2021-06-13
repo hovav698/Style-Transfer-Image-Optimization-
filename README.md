@@ -2,14 +2,16 @@ This repository contains a PyTorch implementation of the original Neural Style T
 
 **How the algorithm works**
 
-The algorithm transfers style from one input image (the style image) onto another input image (the content image) using CNN nets. I chose to use vgg19 for this project. The model outputs activations from different layers of the vgg network, each activation represent features of different scale.
-The algorithm loss function consist of two losses - the content loss and the style loss.
+The algorithm transfers style from one input image (the style image) onto another input image (the content image) using CNN nets. I chose to use vgg19 for this project. 
+The model outputs activations from different layers of the vgg network, each activation represent features of different scale.
 
-Style loss: The style image and another randomly initialized image is fed into the network,  a matrix that called the gram matrix is then calculated from the activations output.
+The algorithm loss function consist of two losses - the content loss and the style loss:
+
+**Style loss**: The style image and another randomly initialized image is fed into the network,  a matrix that called the gram matrix is then calculated from the activations output.
 The gram matrix is simply the matrix of the inner product of each vector and its corresponding vectors in the same image. It represents correlantion between the image and itself, and this is basically the mathematical definition of style. 
 The style loss want to minimize the distance between the gram matrices of all the activation of the style image to the activation of the random image.
 
-Content Loss: The content loss is an MSE loss between the original content image and the the random image. 
+**Content Loss**: The content loss is an MSE loss between the original content image and the the random image. 
 
 The two losses forces the random image to be similar to both the style image and the content image, by optimizing the random image pixel values untill the total loss is minimal. The output is a stylized image which keeps the content from the content image but takes the style from the style image. 
 
