@@ -11,9 +11,14 @@ The algorithm loss function consist of two losses - the content loss and the sty
 The gram matrix is simply the matrix of the inner product of each vector and its corresponding vectors in the same image. It represents correlantion between the image and itself, and this is basically the mathematical definition of style. 
 The style loss want to minimize the distance between the gram matrices of all the activation of the style image to the activation of the random image.
 
+
 **Content Loss**: The content loss is an MSE loss between the original content image and the the random image. 
 
 The two losses forces the random image to be similar to both the style image and the content image, by optimizing the random image pixel values untill the total loss is minimal. The output is a stylized image which keeps the content from the content image but takes the style from the style image. 
+
+
+<img width="750" alt="STarch" src="https://user-images.githubusercontent.com/71300410/121800545-3dfc1700-cc3b-11eb-91c1-01012534fcac.png">
+
 
 Style image      +       Content image     =       Style transfer image
 
