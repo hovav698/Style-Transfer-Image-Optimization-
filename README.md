@@ -11,7 +11,7 @@ The style loss want to minimize the distance between the gram matrices of all th
 
 Content Loss: The content loss is an MSE loss between the original content image and the the random image. 
 
-The two losses forces the random image to be similar both to the style image and to the content image. The output is a stylized image which keeps the content from the content image but takes the style from the style image. 
+The two losses forces the random image to be similar to both the style image and the content image, by optimizing the random image pixel values untill the total loss is minimal. The output is a stylized image which keeps the content from the content image but takes the style from the style image. 
 
 Style image      +       Content image     =       Style transfer image
 
